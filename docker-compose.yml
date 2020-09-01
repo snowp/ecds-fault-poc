@@ -1,0 +1,16 @@
+version: '2.0'
+services:
+  ecds:
+    build: 
+      context: .
+      dockerfile: Dockerfile-ecds
+    ports:
+    - "1100:1100"
+    - "8000:8000"
+  envoy:
+    build: 
+      context: .
+      dockerfile: Dockerfile-envoy
+    ports: 
+    - 5000:5000
+    - 9901:9901

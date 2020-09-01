@@ -1,0 +1,5 @@
+FROM envoyproxy/envoy-dev:latest
+
+ADD envoy.yaml /
+
+ENTRYPOINT /usr/local/bin/envoy -c /envoy.yaml --bootstrap-version 3 -l debug

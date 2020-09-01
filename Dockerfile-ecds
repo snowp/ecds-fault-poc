@@ -1,0 +1,12 @@
+FROM golang:1.15
+
+WORKDIR /build
+ADD main.go .
+ADD go.mod .
+ADD go.sum .
+
+RUN go build -o ecds
+
+ENV GRPC_GO_LOG_SEVERITY_LEVEL info 
+ENV GRPC_GO_LOG_VERBOSITY_LEVEL 2
+ENTRYPOINT ./ecds
